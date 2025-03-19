@@ -6,6 +6,7 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Manrope:wght@200..800&display=swap"
         rel="stylesheet">
     <style>
@@ -28,8 +29,8 @@
                 <a href="#" class="text-white font-bold">Entrar</a>
             </div>
             <div class="md:hidden flex items-center ">
-                <a id="botao" ">
-                    <img src="img/Group 1.png" alt="">
+                <a id="botao">
+                    <i class="text-4xl text-white bi bi-list"></i>
                 </a>
             </div>
             <div id="modal" class="hidden md:hidden w-[100%] h-[100%] mt-10 absolute bg-black ">
@@ -49,10 +50,17 @@
         </div>
     </div>
     <script>
-        const btn = document.querySelector('#botao')
+        const btn = document.querySelector('#botao i')
         const menu = document.querySelector('#modal')
 
         btn.addEventListener('click', function(){
+            if (btn.classList.contains('bi-list')) {
+                btn.classList.remove('bi-list');
+                btn.classList.add('bi-x');
+            } else {
+                btn.classList.remove('bi-x');
+                btn.classList.add('bi-list');
+            }
             menu.classList.toggle('hidden')
         })
     </script>
